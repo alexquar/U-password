@@ -16,7 +16,7 @@ export default function AddPasswordForm() {
     }
   return (
     <div className="row justify-content-center  my-5">
-        <div className="col-6">
+        <div className="col-12 col-md-10 col-lg-8">
         <form onSubmit={(e)=>handleSubmit(e)}>
             <h1>Add New Password</h1>
             <p>Just add the password and what it is for then hit save!</p>

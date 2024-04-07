@@ -1,7 +1,8 @@
 import { useState } from "react"
 
-export default function PasswordCard(service,createdAt, password ) {
+export default function PasswordCard({password : data}) {
     const [showPassword, setShowPassword]= useState(false)
+    const {service, password, createdAt} = data
     const handleClick= () =>{
         if(showPassword){
             setShowPassword(false)
@@ -13,7 +14,7 @@ export default function PasswordCard(service,createdAt, password ) {
     <div className="card">
     <div className="card-body">
       <h5 className="card-title">Password for {service}</h5>
-      <p className="cart-text">Password created/changed: {createdAt}</p>
+    {createdAt &&  <p className="cart-text">Password created/changed: {createdAt.seconds}</p>}
     {!showPassword &&  <button className="btn" onClick={handleClick}>Show Password</button>}
     {showPassword &&  <button className="btn" onClick={handleClick}>Show Password</button>}
     {showPassword && <p className="card-text">Password: {password}</p>}
