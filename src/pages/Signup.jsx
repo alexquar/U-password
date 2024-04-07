@@ -21,14 +21,14 @@ export default function Signup() {
     <span className="card-text mx-2">
     Email:
     </span>
-    <input type="email"   onChange={(e)=>setEmail(e.target.value)}
+    <input type="email" required   onChange={(e)=>setEmail(e.target.value)}
     value={email} />
       </label>
       <label className="my-3" >
     <span className="mx-2 card-text">
     Password:
     </span>
-    <input type="password"   onChange={(e)=>setPassword(e.target.value)}
+    <input type="password" required  onChange={(e)=>setPassword(e.target.value)}
     value={password}/>
       </label>
       <label className="my-3">
@@ -36,7 +36,7 @@ export default function Signup() {
         Display Name:
     </span>
     <input   onChange={(e)=>setDisplayName(e.target.value)}
-    value={displayName} type="text" />
+    value={displayName} required type="text" />
       </label>
       <div className="d-grid mt-3 col-4 mx-auto">
       <button className="btn btn-dark">Submit</button>

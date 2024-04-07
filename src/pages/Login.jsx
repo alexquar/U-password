@@ -24,6 +24,7 @@ export default function Login() {
     type="email" 
     onChange={(e)=>setEmail(e.target.value)}
     value={email}
+    required
     />
       </label>
       <label className="my-3" >
@@ -34,6 +35,7 @@ export default function Login() {
     type="password"
     onChange={(e)=>setPassword(e.target.value)}
     value={password}
+    required
     />
       </label>
       <div className="d-grid mt-3 col-4 mx-auto">
