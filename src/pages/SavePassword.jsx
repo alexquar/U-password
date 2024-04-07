@@ -3,9 +3,8 @@ import CardGrid from "../components/CardGrid";
 
 export default function SavePassword() {
   return (
-    <div>
+    <div className="container text-center">
       <AddPasswordForm />
-      <CardGrid />
     </div>
   )
 }
