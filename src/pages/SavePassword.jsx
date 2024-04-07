@@ -6,6 +6,7 @@ export default function SavePassword() {
   return (
     <div className="container text-center">
       <AddPasswordForm  />
+      {error && <div className="alert alert-danger"> {error} </div>}
       <CardGrid passwords={documents} />
     </div>
   )

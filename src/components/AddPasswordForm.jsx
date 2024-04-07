@@ -3,7 +3,7 @@ import { useFirestore } from "../hooks/useFirestore"
 export default function AddPasswordForm() {
     const [service, setService]= useState('')
     const [password,setPassword]=useState('')
-    const {addDocument, response} = useFirestore('passwords')
+    const {addDocument} = useFirestore('passwords')
    const handleSubmit=(e)=>{
         e.preventDefault()
         const doc = {
