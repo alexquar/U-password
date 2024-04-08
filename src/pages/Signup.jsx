@@ -1,11 +1,13 @@
 import { useState } from "react"
-
+import { useSignup } from "../hooks/useSignup"
 export default function Signup() {
   const [password, setPassword]= useState('')
   const [email,setEmail]= useState('')
+  const {isPending, error, signup}= useSignup()
   const [displayName, setDisplayName]= useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
+    signup(email, password, displayName)
   }
 
   return (
@@ -39,7 +41,11 @@ export default function Signup() {
     value={displayName} required type="text" />
       </label>
       <div className="d-grid mt-3 col-4 mx-auto">
-      <button className="btn btn-dark">Submit</button>
+      {error && <div class="alert alert-danger" role="alert">
+  {error}
+</div> }
+    {!isPending &&  <button className="btn btn-dark">Submit</button>}
+    {isPending &&  <button disabled className="btn btn-dark">Loading...</button>}
       </div>
       </form>
     </div>
