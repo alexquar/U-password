@@ -1,8 +1,9 @@
 import {Link} from 'react-router-dom'
 import { useAuthContext } from '../hooks/useAuthContext'
-import { useContext } from 'react'
+import { useLogout } from '../hooks/useLogout'
 export default function Navbar() {
   const {user}=useAuthContext()
+  const {isPending, logout} = useLogout()
   return (
     <nav class="navbar navbar-dark bg-dark py-3">
   <div class="container-fluid container">
@@ -13,7 +14,8 @@ export default function Navbar() {
       <Link className='mx-3 text-light' to='/passwords/saved'>Saved</Link>
       <Link className='mx-3 text-light' to='/passwords/eval'>Check</Link>
       <Link className='mx-3 text-light' to='/passwords/create'>Create</Link>
-      <button  className="btn btn-outline-light mx-3">Logout</button>
+    {!isPending && <button onClick={logout} className="btn btn-outline-light mx-3">Logout</button>}
+    {isPending && <button disabled className="btn btn-outline-light mx-3">Loading...</button>}
       </div>
 }
       {!user &&
