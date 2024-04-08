@@ -1,11 +1,13 @@
 import { useState } from "react"
+import { useLogin } from "../hooks/useLogin"
 
 export default function Login() {
   const [password, setPassword]= useState('')
   const [email,setEmail]= useState('')
+  const {isPending, error, login} = useLogin()
   const handleSubmit = (e) => {
     e.preventDefault()
-    //w
+    login(email,password)
   }
   return (
     <div className="container text-center py-5 my-5">
@@ -39,7 +41,11 @@ export default function Login() {
     />
       </label>
       <div className="d-grid mt-3 col-4 mx-auto">
-      <button className="btn btn-dark">Login</button>
+    {error && <div class="alert alert-danger" role="alert">
+  {error}
+</div> }
+    {!isPending &&  <button className="btn btn-dark">Login</button>}
+    {isPending &&  <button disabled className="btn btn-dark">Loading...</button>}
       </div>
       </form>
     </div>

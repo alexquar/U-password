@@ -12,8 +12,8 @@ export default function Navbar() {
       <button  className="btn btn-outline-light mx-3">Logout</button>
       </div>
       <div>
-      <Link  className='mx-3 text-light' to='/signup'>Login</Link>
-      <Link   className='mx-3 text-light' to='/login'> Signup </Link>
+      <Link  className='mx-3 text-light' to='/signup'>Signup</Link>
+      <Link   className='mx-3 text-light' to='/login'> Login </Link>
       </div>
     </div>
   </div>
