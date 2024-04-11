@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { passContext } from "../context/passContextContext"
+import { passContext } from "../context/PassContext"
 
 export const usePass = () => {
     const context = useContext(passContext)

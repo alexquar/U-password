@@ -12,7 +12,7 @@ const passReducer = (state, action) => {
   }
 }
 
-export function passProvider({children}){
+export function PassProvider({children}){
     
   const [state, dispatch] = useReducer(passReducer, {
     password : null,
