@@ -1,6 +1,8 @@
 import { useState } from "react"
+import { usePass } from "../hooks/usePassContext"
 export default function CheckPassword() {
-    const [password,setPassword] = useState('')
+  const {password:pass} = usePass()
+    const [password,setPassword] = useState(pass)
     const [strengthBar, setStrengthBar]= useState('0')
     const checkPassword =(e)=>{
         e.preventDefault()
