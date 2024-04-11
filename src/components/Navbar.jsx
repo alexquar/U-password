@@ -1,14 +1,19 @@
 import {Link} from 'react-router-dom'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { useLogout } from '../hooks/useLogout'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUnlockKeyhole } from '@fortawesome/free-solid-svg-icons'
 export default function Navbar() {
   const {user}=useAuthContext()
   const {isPending, logout} = useLogout()
   return (
-    <nav class="navbar navbar-dark bg-dark py-3">
-  <div class="container-fluid container">
-    <Link class="navbar-brand" to='/'> <h1>U Passwords</h1></Link>
-    <div class="d-flex">
+    <nav className="navbar navbar-dark bg-dark py-3">
+  <div className="container-fluid container">
+    <div className='d-flex flex-row align-items-center'>
+  <FontAwesomeIcon icon={faUnlockKeyhole} className='fs-3 me-4'style={{color: "#ffffff",}} />
+    <Link className="navbar-brand" to='/'> <h1>U Passwords</h1></Link>
+    </div>
+    <div className="d-flex">
       {user &&
       <div>
       <Link className='mx-3 text-light' to='/passwords/saved'>Saved</Link>
