@@ -19,6 +19,9 @@ if (num) updatedChars += "1234567890";
 if (spec) updatedChars += "!@#$%^&*()_-+={}[]|;',.:<>";
 
 setChars(updatedChars);
+if(!chars){
+return
+}
 let password = "";
 for (let i = 0; i < len; i++) {
   const randomIndex = Math.floor(Math.random() * chars.length);
