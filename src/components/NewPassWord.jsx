@@ -67,8 +67,12 @@ value={len}
 <div className="my-3">
 <button className="btn btn-dark"> Generate </button>
 </div>
+{pass && 
+<div class="alert alert-dark col-6" role="alert">
+  Your new password is: <span className=" ms-2 fs-6 text-light fw-bold">{pass}</span>
+</div>}
       </form>
-      <p>{pass}</p>
+  
     </div>
   )
 }
