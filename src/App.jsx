@@ -6,6 +6,7 @@ import SavePassword from './pages/SavePassword';
 import Signup from './pages/Signup';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CheckPassword from './pages/CheckPassword';
+import Footer from './components/Footer';
 import { useAuthContext } from './hooks/useAuthContext';
 function App() {
 const {user} = useAuthContext()
@@ -15,13 +16,13 @@ const {user} = useAuthContext()
       <BrowserRouter>
       <Navbar />
         <Routes>
-        <Route path="/" element={ user ? <Home /> : <Login />} />
         <Route path="/passwords/create" element={ user ? <NewPassword />: <Login />} />
         <Route path="/passwords/eval" element={ user ? <CheckPassword /> : <Login />} />
         <Route path="/passwords/saved" element={ user ? <SavePassword />:<Login/>} />
         <Route path="/login" element={!user? <Login />:<Home/>} />
         <Route path="/signup" element={!user?<Signup />:<Home/>} />
     </Routes>
+    <Footer />
       </BrowserRouter>
     </div>
   );

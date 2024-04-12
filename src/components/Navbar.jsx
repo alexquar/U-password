@@ -11,7 +11,7 @@ export default function Navbar() {
   <div className="container-fluid container">
     <div className='d-flex flex-row align-items-center'>
   <FontAwesomeIcon icon={faUnlockKeyhole} className='fs-3 me-4'style={{color: "#ffffff",}} />
-    <Link className="navbar-brand" to='/'> <h1>U Passwords</h1></Link>
+   <h1 className='navbar-brand fs-2 mt-2'>U Passwords</h1>
     </div>
     <div className="d-flex">
       {user &&
