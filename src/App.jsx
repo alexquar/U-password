@@ -8,6 +8,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CheckPassword from './pages/CheckPassword';
 import Footer from './components/Footer';
 import { useAuthContext } from './hooks/useAuthContext';
+import {Navigate }from 'react-router-dom'
+import Notfound from './pages/Notfound';
 function App() {
 const {user} = useAuthContext()
   return (
@@ -21,6 +23,8 @@ const {user} = useAuthContext()
         <Route path="/passwords/saved" element={ user ? <SavePassword />:<Login/>} />
         <Route path="/login" element={!user? <Login />:<Home/>} />
         <Route path="/signup" element={!user?<Signup />:<Home/>} />
+        <Route path="/Notfound" element={<Notfound />} />
+        <Route path="*" element={<Navigate to="/Notfound" />} />
     </Routes>
     <Footer />
       </BrowserRouter>
