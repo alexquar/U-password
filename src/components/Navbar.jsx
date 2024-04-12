@@ -16,11 +16,25 @@ export default function Navbar() {
     <div className="d-flex">
       {user &&
       <div>
+        <div className='d-none d-md-block'>
       <Link className='mx-3 text-light' to='/passwords/saved'>Saved</Link>
       <Link className='mx-3 text-light' to='/passwords/eval'>Check</Link>
       <Link className='mx-3 text-light' to='/passwords/create'>Create</Link>
     {!isPending && <button onClick={logout} className="btn btn-outline-light mx-3">Logout</button>}
     {isPending && <button disabled className="btn btn-outline-light mx-3">Loading...</button>}
+    </div>
+    <div className="text-light nav-item dropdown d-md-none mt-4 me-5 pe-5">
+    <p class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Links
+          </p>
+          <ul class="dropdown-menu bg-dark">
+        <li className='my-2'>  <Link className='mx-3 text-light' to='/passwords/saved'>Saved</Link></li>
+     <li className='my-2'> <Link className='mx-3 text-light' to='/passwords/eval'>Check</Link></li>
+     <li className='my-2'> <Link className='mx-3 text-light' to='/passwords/create'>Create</Link> </li>
+  <li className='my-2'> {!isPending && <button onClick={logout} className="btn btn-outline-light mx-3">Logout</button>}</li> 
+  <li className='my-2'> {isPending && <button disabled className="btn btn-outline-light mx-3">Loading...</button>} </li> 
+          </ul>
+          </div>
       </div>
 }
       {!user &&

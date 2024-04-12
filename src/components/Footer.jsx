@@ -5,7 +5,7 @@ export default function Footer() {
     <nav className="navbar navbar-dark bg-secondary fixed-bottom">
   <div className="container-fluid">
     <Link className="navbar-brand ms-3" to="#">© 2024 U Passwords™. All Rights Reserved.</Link>
-    <button className="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+    <button className="d-none d-sm-block navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
