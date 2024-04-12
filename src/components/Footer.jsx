@@ -1,44 +1,34 @@
 
-
+import { Link } from "react-router-dom"
 export default function Footer() {
   return (
     <nav className="navbar navbar-dark bg-secondary fixed-bottom">
   <div className="container-fluid">
-    <a className="navbar-brand ms-3" href="#">© 2024 U Passwords™. All Rights Reserved.</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+    <Link className="navbar-brand ms-3" to="#">© 2024 U Passwords™. All Rights Reserved.</Link>
+    <button className="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div className="offcanvas-header">
-        <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+        <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">More Info</h5>
         <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div className="offcanvas-body">
-        <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 mb-3">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Home</a>
+            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Link</a>
+            <Link className="nav-link" to="/">Terms</Link>
           </li>
-          <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul className="dropdown-menu dropdown-menu-dark">
-              <li><a className="dropdown-item" href="#">Action</a></li>
-              <li><a className="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr className="dropdown-divider"/>
-              </li>
-              <li><a className="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+          <li className="nav-item">
+            <Link className="nav-link" aria-current="page" to="/">Legal</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/">About</Link>
           </li>
         </ul>
-        <form className="d-flex mt-3" role="search">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-success" type="submit">Search</button>
-        </form>
+            <h5> <Link to="https://github.com/alexquar/U-passwords" className="text-light">Check out the source code!</Link></h5>
       </div>
     </div>
   </div>
