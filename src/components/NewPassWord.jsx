@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import { usePass } from "../hooks/usePassContext"
 export default function NewPassWord() {
 const [low, setLow] = useState(false)
 const [up, setUp] = useState(false)
@@ -8,6 +8,7 @@ const [spec, setSpec] = useState(false)
 const [len, setLen] = useState(6)
 const [pass, setPass] = useState('')
 const [chars, setChars] = useState('')
+const {changePassword} = usePass()
 const handleSubmit = (e)=>{
 e.preventDefault()
 
@@ -28,6 +29,8 @@ for (let i = 0; i < len; i++) {
   password += chars[randomIndex];
 }
 setPass(password)
+changePassword(password)
+
 }
   return (
     <div className="container my-5">

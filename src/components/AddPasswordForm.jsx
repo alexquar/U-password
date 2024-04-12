@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { useFirestore } from "../hooks/useFirestore"
 import { useAuthContext } from "../hooks/useAuthContext"
-export default function AddPasswordForm() {
+export default function AddPasswordForm({password:pass}) {
     const {user} = useAuthContext()
     const [service, setService]= useState('')
-    const [password,setPassword]=useState('')
+    const [password,setPassword]=useState(pass)
     const {addDocument} = useFirestore('passwords')
    const handleSubmit=(e)=>{
         e.preventDefault()
