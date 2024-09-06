@@ -6,8 +6,13 @@ export default function AddPasswordForm({password:pass}) {
     const [service, setService]= useState('')
     const [password,setPassword]=useState(pass)
     const {addDocument} = useFirestore('passwords')
+    const [error, setError]= useState('')
+
    const handleSubmit=(e)=>{
         e.preventDefault()
+        if ( password=='hi'){
+            setError('Please fill in all fields properly!')
+        } else { 
         const doc = {
             service,
             password,
@@ -16,6 +21,7 @@ export default function AddPasswordForm({password:pass}) {
         addDocument(doc)
         setService('')
         setPassword('')
+      }
     }
   return (
     <div className="row justify-content-center  my-5">
@@ -38,6 +44,21 @@ export default function AddPasswordForm({password:pass}) {
         required
         />
         <label htmlFor="floatingPassword">Password?</label>
+        </div>
+        <p className="mt-3 text-danger ">{error}</p>
+        <div>
+        <div class="form-check form-switch">
+     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+   <label class="form-check-label" for="flexSwitchCheckChecked">Use default weak password?</label>
+    </div>
+    <div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+  <label class="form-check-label" for="flexSwitchCheckChecked">Use default medium password</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+  <label class="form-check-label" for="flexSwitchCheckChecked">Use default strong password</label>
+</div>
         </div>
         <div className="d-grid">
         <button className="btn btn-secondary btn-lg my-3">Save</button>
