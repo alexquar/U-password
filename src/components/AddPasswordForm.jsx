@@ -7,10 +7,12 @@ export default function AddPasswordForm({password:pass}) {
     const [password,setPassword]=useState(pass)
     const {addDocument} = useFirestore('passwords')
     const [error, setError]= useState('')
-
+    const [weak, setWeak]= useState(false)
+    const [medium, setMedium]= useState(false)
+    const [strong, setStrong]= useState(false)
    const handleSubmit=(e)=>{
         e.preventDefault()
-        if ( password=='hi'){
+        if ( password=='' && !weak && !medium && !strong || (weak && medium && strong) || (weak && medium) || (weak && strong) || (medium && strong) ) {
             setError('Please fill in all fields properly!')
         } else { 
         const doc = {
@@ -21,6 +23,10 @@ export default function AddPasswordForm({password:pass}) {
         addDocument(doc)
         setService('')
         setPassword('')
+        setError('')
+        setMedium(false)
+        setStrong(false)
+        setWeak(false)
       }
     }
   return (
@@ -46,18 +52,24 @@ export default function AddPasswordForm({password:pass}) {
         <label htmlFor="floatingPassword">Password?</label>
         </div>
         <p className="mt-3 text-danger ">{error}</p>
-        <div>
-        <div class="form-check form-switch">
-     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
-   <label class="form-check-label" for="flexSwitchCheckChecked">Use default weak password?</label>
+        <div className="d-flex flex-column">
+        <div className=" form-switch flex justify-content-center">
+     <input className="form-check-input" type="checkbox" role="switch" 
+      onClick={()=>setWeak(!weak)}
+     />
+   <label className="form-check-label ms-3" >Use default weak password?</label>
     </div>
-    <div class="form-check form-switch">
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
-  <label class="form-check-label" for="flexSwitchCheckChecked">Use default medium password</label>
+    <div className=" form-switch">
+  <input className="form-check-input" type="checkbox" role="switch"
+  onClick={()=>setMedium(!medium)}
+  />
+  <label className="form-check-label ms-3" >Use default medium password</label>
 </div>
-<div class="form-check form-switch">
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
-  <label class="form-check-label" for="flexSwitchCheckChecked">Use default strong password</label>
+<div className=" form-switch">
+  <input className="form-check-input" type="checkbox" role="switch" 
+  onClick={()=>setStrong(!strong)}
+  />
+  <label className="form-check-label ms-3" >Use default strong password</label>
 </div>
         </div>
         <div className="d-grid">
