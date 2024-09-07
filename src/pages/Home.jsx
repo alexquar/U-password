@@ -20,9 +20,9 @@ export default function Home() {
 <p class="card-text fs-3 fw-bold text-decoration-underline">Account Options</p>
 <p class="card-text">Set your default passwords:</p>
 <div class="btn-group" role="group" aria-label="Basic outlined example">
-  <button type="button" class="btn btn-outline-secondary">Simple</button>
+  <button type="button" class="btn btn-outline-secondary">Weak</button>
   <button type="button" class="btn btn-outline-secondary">Medium</button>
-  <button type="button" class="btn btn-outline-secondary">Hard</button>
+  <button type="button" class="btn btn-outline-secondary">Strong</button>
 </div>
 </div>
     </div>
