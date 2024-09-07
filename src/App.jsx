@@ -18,7 +18,7 @@ const {user} = useAuthContext()
       <BrowserRouter>
       <Navbar />
         <Routes>
-        <Route path="/" element={user ? <Navigate to="/passwords/create" /> : <Navigate to="/login" /> } />
+        <Route path="/" element={user ? <Home /> : <Navigate to="/login" /> } />
         <Route path="/passwords/create" element={ user ? <NewPassword />: <Login />} />
         <Route path="/passwords/eval" element={ user ? <CheckPassword /> : <Login />} />
         <Route path="/passwords/saved" element={ user ? <SavePassword />:<Login/>} />

@@ -16,7 +16,9 @@ export default function Footer() {
       <div className="offcanvas-body">
         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 mb-3">
           <li className="nav-item">
-            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+            <Link className="nav-link active" aria-current="page" onClick={()=>window.location.href='/'}
+            data-bs-dismiss="offcanvas" aria-label="Close"
+            >Home</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/">Terms</Link>
