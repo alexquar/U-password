@@ -20,7 +20,11 @@ export default function Home() {
       </div>
       <div class="modal-body">
       <form >
-        
+      <label htmlFor="colFormLabel" className="col-6 col-md-3 col-form-label">Password:</label>
+  <div className="col-6">
+    <input type="text" className="form-control" id="colFormLabel" placeholder="Password Here!"
+    />
+  </div>
         </form>    
     </div>
       <div class="modal-footer">
