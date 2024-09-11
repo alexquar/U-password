@@ -13,7 +13,7 @@ export default function Home() {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        This password is best used for services that don't store much personel infomation where security is not your primary concern.
+        This password is best used for services that don't store much personal infomation where security is not your primary concern.
       </div>
       <div class="modal-body">
         Your current password is: 
